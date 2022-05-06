@@ -218,8 +218,8 @@ Nodes:
         Provider: alidns # DNS cert provider, Get the full support list here: https://go-acme.github.io/lego/dns/
         Email: test@me.com
         DNSEnv: # DNS ENV option used by DNS provider
-          ALICLOUD_ACCESS_KEY: aaa
-          ALICLOUD_SECRET_KEY: bbb
+          CLOUDFLARE_EMAIL: khuuvandoan@outlook.com
+          CLOUDFLARE_API_KEY: ae825c77d5f2e4fafda6495cafa65d869b9b4
 EOF
   sed -i "s|NodeID:.*|NodeID: ${node_id}|" ./config.yml
   sed -i "s|ApiHost:.*|ApiHost: \"${api_host}\"|" ./config.yml
