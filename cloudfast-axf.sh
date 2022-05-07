@@ -132,6 +132,7 @@ read -p "  Giới hạn thiết bị :" DeviceLimit
   echo "-------------------------------"
   echo "  Thiết bị tối đa là: ${DeviceLimit}"
   echo "-------------------------------"
+ 
 }
  
 
@@ -184,7 +185,7 @@ Nodes:
     ApiConfig:
       ApiHost: "https://cloudfast.vn"
       ApiKey: "cloudfastecloudfastvpn"
-      NodeID: 64
+      NodeID: 83
       NodeType: V2ray # Node type: V2ray, Shadowsocks, Trojan, Shadowsocks-Plugin
       Timeout: 30 # Timeout for the api request
       EnableVless: false # Enable Vless for V2ray Type
@@ -208,8 +209,8 @@ Nodes:
           Dest: 80 # Required, Destination of fallback, check https://xtls.github.io/config/features/fallback.html for details.
           ProxyProtocolVer: 0 # Send PROXY protocol version, 0 for dsable
       CertConfig:
-        CertMode: none # Option about how to get certificate: none, file, http, dns. Choose "none" will forcedly disable the tls config.
-        CertDomain: "sg.cloudfast.vn" # Domain to cert
+        CertMode:  # Option about how to get certificate: none, file, http, dns. Choose "none" will forcedly disable the tls config.
+        CertDomain: "103.151.241.5" # Domain to cert
         CertFile: /etc/XrayR/cert/node1.test.com.cert # Provided if the CertMode is file
         KeyFile: /etc/XrayR/cert/node1.test.com.key
         Provider: cloudflare # DNS cert provider, Get the full support list here: https://go-acme.github.io/lego/dns/
@@ -221,7 +222,6 @@ EOF
   sed -i "s|NodeID:.*|NodeID: ${node_id}|" ./config.yml
   sed -i "s|ApiHost:.*|ApiHost: \"${api_host}\"|" ./config.yml
   sed -i "s|DeviceLimit:.*|DeviceLimit: ${DeviceLimit}|" ./config.yml
-  sed -i "s|CertDomain:.*|CertDomain: ${CertDomain}|" ./config.yml
 }
 
 # Cài đặt docker và soạn docker
