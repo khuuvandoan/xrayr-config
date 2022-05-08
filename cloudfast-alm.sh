@@ -105,15 +105,15 @@ error_detect_depends() {
 
 # Cài đặt trước cài đặt
 pre_install_docker_compose() {
-  echo -e "  [1] vuthaiazz.xyz"
-  echo -e "  [2] vuthaiazz.xyz"
+  echo -e "  [1] cloudfast.vn"
+  echo -e "  [2] cloudfast.vn"
   read -p "  Web đang sử dụng:" api_host
   if [ "$api_host" == "1" ]; then
-    api_host="http://vuthaiazz.xyz/"
+    api_host="http://cloudfast.vn/"
   elif [ "$api_host" == "2" ]; then
-    api_host="http://vuthaiazz.xyz/"
+    api_host="http://cloudfast.vn/"
   else 
-    api_host="http://https://vuthaiazz.xyz/"
+    api_host="http://https://cloudfast.vn/"
   fi
 
   echo "--------------------------------"
