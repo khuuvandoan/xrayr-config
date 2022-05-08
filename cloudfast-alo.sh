@@ -105,15 +105,15 @@ error_detect_depends() {
 
 # Cài đặt trước cài đặt
 pre_install_docker_compose() {
-  echo -e "  [1] cloudfast.vn"
-  echo -e "  [2] cloudfast.vn"
+  echo -e "  [1] vuthaiazz.xyz"
+  echo -e "  [2] vuthaiazz.xyz"
   read -p "  Web đang sử dụng:" api_host
   if [ "$api_host" == "1" ]; then
-    api_host="http://cloudfast.vn/"
+    api_host="http://vuthaiazz.xyz/"
   elif [ "$api_host" == "2" ]; then
-    api_host="http://cloudfast.vn/"
+    api_host="http://vuthaiazz.xyz/"
   else 
-    api_host="http://https://cloudfast.vn/"
+    api_host="http://https://vuthaiazz.xyz/"
   fi
 
   echo "--------------------------------"
@@ -133,6 +133,11 @@ read -p "  Giới hạn thiết bị :" DeviceLimit
   echo "  Thiết bị tối đa là: ${DeviceLimit}"
   echo "-------------------------------"
  
+ read -p "  ip vps :" CertDomain
+  [ -z "${CertDomain}" ] && CertDomain="0"
+  echo "-------------------------------"
+  echo "  Thiết bị tối đa là: ${CertDomain}"
+  echo "-------------------------------"
 }
  
 
@@ -209,7 +214,7 @@ Nodes:
           Dest: 80 # Required, Destination of fallback, check https://xtls.github.io/config/features/fallback.html for details.
           ProxyProtocolVer: 0 # Send PROXY protocol version, 0 for dsable
       CertConfig:
-        CertMode:  # Option about how to get certificate: none, file, http, dns. Choose "none" will forcedly disable the tls config.
+        CertMode: dns # Option about how to get certificate: none, file, http, dns. Choose "none" will forcedly disable the tls config.
         CertDomain: "103.151.241.5" # Domain to cert
         CertFile: /etc/XrayR/cert/node1.test.com.cert # Provided if the CertMode is file
         KeyFile: /etc/XrayR/cert/node1.test.com.key
