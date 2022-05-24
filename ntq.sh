@@ -105,15 +105,15 @@ error_detect_depends() {
 
 # Cài đặt trước cài đặt
 pre_install_docker_compose() {
-  echo -e "  [1] zingfast.net"
-  echo -e "  [2] zingfast.net"
+  echo -e "  [1] ezdigi.biz"
+  echo -e "  [2] ezdigi.biz"
   read -p "  Web đang sử dụng:" api_host
   if [ "$api_host" == "1" ]; then
-    api_host="http://zingfast.net/"
+    api_host="http://ezdigi.biz"
   elif [ "$api_host" == "2" ]; then
-    api_host="http://zingfast.net/"
+    api_host="http://ezdigi.biz"
   else 
-    api_host="http://https://zingfast.net/"
+    api_host="http://ezdigi.biz/"
   fi
 
   echo "--------------------------------"
@@ -181,8 +181,8 @@ Nodes:
   -
     PanelType: "V2board" # Panel type: SSpanel, V2board, PMpanel, Proxypanel
     ApiConfig:
-      ApiHost: "http://zingfast.net/"
-      ApiKey: "htpshwpaecnlllsmadl"
+      ApiHost: "https://ezdigi.biz"
+      ApiKey: "kenhdidong_mmmzo"
       NodeID: 41
       NodeType: V2ray # Node type: V2ray, Trojan, Shadowsocks, Shadowsocks-Plugin
       Timeout: 30 # Timeout for the api request
@@ -218,8 +218,8 @@ Nodes:
         Provider: alidns # DNS cert provider, Get the full support list here: https://go-acme.github.io/lego/dns/
         Email: test@me.com
         DNSEnv: # DNS ENV option used by DNS provider
-          CLOUDFLARE_EMAIL: khuuvandoan@outlook.com
-          CLOUDFLARE_API_KEY: ae825c77d5f2e4fafda6495cafa65d869b9b4
+          CLOUDFLARE_EMAIL: xxx
+          CLOUDFLARE_API_KEY: xxx
 EOF
   sed -i "s|NodeID:.*|NodeID: ${node_id}|" ./config.yml
   sed -i "s|ApiHost:.*|ApiHost: \"${api_host}\"|" ./config.yml
@@ -351,9 +351,9 @@ Install_xrayr() {
 # Bước khởi tạo
 clear
 while true; do
-  echo "  -----XrayR AZZ-----"
-  echo "  VŨ VĂN THÁI (AZZ)"
-  echo "  VŨ VĂN THÁI mượn bản xrayr thường của misaka"
+  echo "  -----XrayR NTQ-----"
+  echo "  NTQ (AZZ)"
+  echo "  NTQ"
   echo "  Vui lòng nhập một số để Thực Hiện Câu Lệnh:"
   for ((i = 1; i <= ${#operation[@]}; i++)); do
     hint="${operation[$i - 1]}"
